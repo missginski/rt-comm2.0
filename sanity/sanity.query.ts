@@ -1,0 +1,112 @@
+import { groq } from "next-sanity";
+import client from "./sanity.client";
+
+export async function getHomepage() {
+  return client.fetch(
+    groq`*[_type == "homepage"][0]{
+      hero{
+        heroHeadline,
+        heroSubhead,
+        heroBtnText,
+        "heroImageUrl": heroImage.asset->url,
+      },
+      about{
+        aboutHeadline,
+        aboutText,
+        aboutBtnText,
+      },
+      stats{
+        statItems[]{
+          label,
+          value
+        }
+      },
+      services{
+        title,
+        btnText,
+        serviceItems[]{
+          title,
+          description,
+        } 
+      },
+      valProps{
+        title,
+        description,
+        "imageUrl": image.asset->url,
+        image{
+          alt
+        },
+        valPropItems[]{
+          description,
+          icon,
+        }
+      },
+      contact{
+        title,
+        description,
+        "imageUrl": image.asset->url,
+        "imageAlt": image.alt,
+        contactItems[]{
+          name,
+          email,
+          phone,
+        },
+        address[]{
+          street,
+          line2,
+          city,
+          state,
+          zipcode
+        }
+      },
+    }`
+  );
+}
+
+export async function getProject() {
+  return client.fetch(
+    groq`*[_type == "project"]{
+      _id,
+      title,
+      description,
+      excerpt,
+      client,
+      location,
+      "slug": slug.current,
+      "imageUrl": image.asset->url,
+      "imageAlt": image.alt
+    }`
+  );
+}
+
+export async function getProjectBySlug(slug: string) {
+  return client.fetch(
+    groq`*[_type == "project" && slug.current == $slug][0]{
+      _id,
+      title,
+      "slug": slug.current,
+      description,
+      client,
+      location,
+      "imageUrl": image.asset->url,
+      "imageAlt": image.alt
+    }`,
+    { slug }
+  );
+}
+
+export async function getProjectsPreview() {
+  return client.fetch(
+    groq`*[_type == "project"] 
+  | order(coalesce(publishedAt, _createdAt) desc)[0...3]{
+      _id,
+      title,
+      "slug": slug.current,
+      excerpt,
+      client,
+      location,
+      "imageUrl": image.asset->url,
+      "imageAlt": image.alt
+    }`
+  );
+}
