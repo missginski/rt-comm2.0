@@ -1,7 +1,9 @@
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -20,17 +22,16 @@ export const metadata: Metadata = {
   description: "",
 };
 
-export default function RootLayout({
+export default function SiteLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <>
-        {children}
-      </>
-    </html>
+    <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
+      <Header />
+      {children}
+      <Footer />
+    </body>
   );
 }
-

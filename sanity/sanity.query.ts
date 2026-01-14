@@ -23,10 +23,13 @@ export async function getHomepage() {
       },
       services{
         title,
+        description,
         btnText,
         serviceItems[]{
           title,
           description,
+          "imageUrl": image.asset->url,
+          "imageAlt": image.alt,
         } 
       },
       valProps{

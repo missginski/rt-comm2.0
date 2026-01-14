@@ -22,9 +22,12 @@ export type HomepageType = {
   services: {
     title: "string";
     btnText: "string";
+    description: "string";
     serviceItems: {
       title: "string";
       description: "text";
+      imageUrl: string; 
+      imageAlt?: string;
     }[];
   }
   valProps: {

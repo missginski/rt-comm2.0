@@ -1,6 +1,7 @@
 import { getHomepage } from "@/sanity/sanity.query";
 import { HomepageType } from "@/types";
 import Link from "next/link";
+import ServicesAccordion from "./ServicesAccordion";
 
 export async function ServicesPreview() {
   const homepage: HomepageType = await getHomepage();
@@ -8,11 +9,16 @@ export async function ServicesPreview() {
   return (
     <section className="bg-charcoal-dark py-20">
       <div className="mx-auto container max-w-xl px-10">
-        
-        <h2 className="text-3xl font-display md:text-4xl font-semibold mb-12 text-grey-100">
+
+        <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
           {homepage.services.title}
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <p className="text-sm md:text-base text-grey-200 w-1/2">
+          {homepage.services.description}
+        </p>
+
+
+        {/* <div className="grid gap-8 md:grid-cols-3">
           {homepage.services.serviceItems.map((item) => (
             <div
               key={item.title}
@@ -44,8 +50,14 @@ export async function ServicesPreview() {
               </span>
             </div>
           ))}
-        </div>
-        {/* <Link href="/Services">
+        </div> */}
+        
+
+        <ServicesAccordion
+          items={homepage.services.serviceItems}
+        />
+
+        <Link href="/Services">
           <button className="
             bg-[var(--color-primary)]
             hover:bg-[var(--color-primary-soft)]
@@ -58,7 +70,8 @@ export async function ServicesPreview() {
             transition-colors">
             {homepage.services.btnText}
           </button>
-        </Link> */}
+        </Link>
+        
       </div>
     </section>
   );

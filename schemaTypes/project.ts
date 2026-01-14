@@ -1,5 +1,5 @@
 import { defineType, defineField } from "sanity";
-import ExcerptInput from "@/app/projects/ExcerptInput";
+import ExcerptInput from "@/app/(site)/projects/ExcerptInput";
 
 const project = {
   name: "project",

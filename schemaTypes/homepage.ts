@@ -109,6 +109,12 @@ const homepage = {
           type: "string",
         },
         {
+          name: "description",
+          title: "Description",
+          type: "text",
+          rows: 3,
+        },
+        {
           name: "btnText",
           title: "Button Text",
           type: "string",
@@ -130,6 +136,20 @@ const homepage = {
                   name: "description",
                   title: "Description",
                   type: "text",
+                  rows: 3,
+                },
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  options: { hotspot: true },
+                  fields: [
+                    {
+                      name: "alt",
+                      title: "Alt Text",
+                      type: "string"
+                    }
+                  ]
                 },
               ]
             }
@@ -152,6 +172,7 @@ const homepage = {
           name: "description",
           title: "Description",
           type: "text",
+          rows: 3,
         },
         {
           name: "image",
@@ -223,6 +244,7 @@ const homepage = {
           name: "description",
           title: "Description",
           type: "text",
+          rows: 4,
         },
         {
           name: "image",
