@@ -80,3 +80,13 @@ export type ContactType = {
     zipcode: string;
   }[];
 }
+
+export type SiteSettingsType = {
+  _id: string;
+  title: string;
+  description: string;
+  logoimageUrl: string;
+  logoimageAlt: string;
+  brandimageUrl: string;
+  brandimageAlt: string;
+}

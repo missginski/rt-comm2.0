@@ -125,3 +125,21 @@ export async function getProjectsPreview() {
     }`
   );
 }
+
+export async function getSiteSettings() {
+  return client.fetch(
+    groq`*[_type == "siteSettings"][0]{
+      _id,
+      footerText,
+      "logoImageUrl": brandLogo.asset->url,
+      "logoImageAlt": brandLogo.alt,
+      "unionImageUrl": unionLogo.asset->url,
+      "unionImageAlt": unionLogo.alt,
+    }`
+  );
+}
+
+
+
+
+
