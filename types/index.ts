@@ -42,6 +42,12 @@ export type HomepageType = {
       icon: "string";
     }[];
   }
+  contact: {
+    title: "string";
+    description: "string";
+    imageUrl: string;
+    btnText: string;
+  }
 };
 
 export type ProjectType = {

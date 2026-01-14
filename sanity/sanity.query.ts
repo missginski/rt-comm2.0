@@ -48,19 +48,7 @@ export async function getHomepage() {
         title,
         description,
         "imageUrl": image.asset->url,
-        "imageAlt": image.alt,
-        contactItems[]{
-          name,
-          email,
-          phone,
-        },
-        address[]{
-          street,
-          line2,
-          city,
-          state,
-          zipcode
-        }
+        btnText,
       },
     }`
   );
