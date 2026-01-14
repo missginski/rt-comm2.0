@@ -1,4 +1,3 @@
-import { PortableTextBlock } from "sanity";
 
 export type HomepageType = {
   _id: string;

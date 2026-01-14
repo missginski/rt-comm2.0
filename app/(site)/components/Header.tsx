@@ -83,11 +83,11 @@ export default function Header() {
           </Link>
 
           <div className="hidden [@media(min-width:940px)]:flex items-center gap-8 text-sm text-white/70">
-            {/* <Link 
+            <Link 
               href="/"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               Home
-            </Link> */}
+            </Link>
             <Link 
               href="/about"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
@@ -98,11 +98,11 @@ export default function Header() {
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               Services
             </Link>
-            <Link 
+            {/* <Link 
               href="/projects"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 w-[150px] hover:text-primary-soft transition duration-500">
               Project Spotlight
-            </Link>
+            </Link> */}
             <Link 
               href="/contact"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
@@ -146,28 +146,28 @@ export default function Header() {
       >
         <div className="mx-auto max-w-[1360px] px-10 pt-[96px] pb-10 flex flex-col">
           <div className="flex flex-col gap-6 text-lg">
-            {/* <Link 
+            <Link 
               href="/"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               Home
-            </Link> */}
+            </Link>
             <Link 
-              href="/About"
+              href="/about"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               About
             </Link>
             <Link 
-              href="/Services"
+              href="/services"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               Services
             </Link>
-            <Link 
-              href="/Project-Spotlight"
+            {/* <Link 
+              href="/projects"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 w-[150px] hover:text-primary-soft transition duration-500">
               Project Spotlight
-            </Link>
+            </Link> */}
             <Link 
-              href="/Contact"
+              href="/contact"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               Contact
             </Link>

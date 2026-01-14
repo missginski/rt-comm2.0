@@ -7,7 +7,7 @@ export default async function ContactBanner() {
 
   return(
     <section 
-      className="bg-charcoal-mid bg-cover relative h-[300px]"
+      className="bg-charcoal-mid bg-cover relative h-[285px]"
       style={{
         backgroundImage: `url(${homepage.contact.imageUrl})`,
       }}

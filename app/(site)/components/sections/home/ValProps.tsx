@@ -28,14 +28,14 @@ export default async function ValueProps() {
             <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
               {homepage.valProps.title}
             </h2>
-            <p className="text-sm md:text-base text-grey-200 mb-8 max-w-xl">
+            <p className="text-sm md:text-base text-grey-400 mb-8 max-w-xl">
               {homepage.valProps.description}
             </p>
 
             <ul  className="space-y-4 text-sm md:text-base grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-8 max-w-[542px] m-auto lg:m-0">
               {homepage.valProps.valPropItems.map((prop) => (
 
-              <li key={prop.description} className="flex items-center gap-3 text-grey-200">
+              <li key={prop.description} className="flex items-center gap-3 text-grey-400">
                 {(() => {
                   const Icon = getIcon(prop.icon);
                   return (

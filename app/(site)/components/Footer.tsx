@@ -26,16 +26,19 @@ export default function Footer() {
         {/* Right: nav + copyright */}
         <div className="flex flex-col items-start gap-3 md:items-end">
           <nav className="flex flex-wrap gap-4 text-xs md:text-sm text-[var(--color-grey-400)]">
-            <Link href="#home" className="hover:text-[var(--color-grey-100)] transition-colors">
+            <Link href="/" className="hover:text-[var(--color-grey-100)] transition-colors">
+              Home
+            </Link>
+            <Link href="/about" className="hover:text-[var(--color-grey-100)] transition-colors">
               About
             </Link>
-            <Link href="#services" className="hover:text-[var(--color-grey-100)] transition-colors">
+            <Link href="/services" className="hover:text-[var(--color-grey-100)] transition-colors">
               Services
             </Link>
-            <Link href="#projects" className="hover:text-[var(--color-grey-100)] transition-colors">
+            {/* <Link href="/projects" className="hover:text-[var(--color-grey-100)] transition-colors">
               Project Spotlight
-            </Link>
-            <Link href="#contact" className="hover:text-[var(--color-grey-100)] transition-colors">
+            </Link> */}
+            <Link href="/contact" className="hover:text-[var(--color-grey-100)] transition-colors">
               Contact
             </Link>
           </nav>

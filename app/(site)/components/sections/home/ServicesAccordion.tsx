@@ -15,7 +15,6 @@ export default function ServicesAccordion({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // image priority: hovered > open > first item (or null)
   const activeIndex = hoveredIndex ?? openIndex ?? 0;
 
   const activeImage = items[activeIndex]?.imageUrl;
@@ -24,7 +23,7 @@ export default function ServicesAccordion({
   return (
     <div className="flex items-center gap-8">
       {/* Left: Accordion */}
-      <div className="w-full space-y-4 h-[600px] flex flex-col justify-center">
+      <div className="w-full space-y-4 h-[550px] flex flex-col justify-center">
         {items.map((item, idx) => { 
           const isOpen = openIndex === idx;
 
@@ -38,7 +37,7 @@ export default function ServicesAccordion({
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
-                className="w-full flex items-center justify-between text-left p-6"
+                className="w-full flex items-center justify-between text-left p-4"
               >
                 <h3 className="text-xl font-semibold text-grey-100">
                   {item.title}
@@ -67,7 +66,7 @@ export default function ServicesAccordion({
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="px-6 pb-6 text-grey-400 text-base leading-relaxed">
+                  <p className="px-4 pb-4 text-grey-400 text-base leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -82,7 +81,7 @@ export default function ServicesAccordion({
         <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
           {activeImage ? (
             <img
-              key={activeImage} // helps the browser swap cleanly
+              key={activeImage}
               src={activeImage}
               alt={activeAlt}
               className="h-full w-full object-cover"

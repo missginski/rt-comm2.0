@@ -7,10 +7,10 @@ export default async function HomeAbout() {
 
   return (
     <section className="bg-charcoal-dark about mx-auto container max-w-xl p-20">
-      <h2 className="text-center text-3xl font-display md:text-4xl font-semibold mb-8 text-grey-100">
+      <h2 className="text-center text-3xl font-display md:text-4xl font-semibold mb-8">
         {homepage.about.aboutHeadline}
       </h2>
-      <p className="text-center text-lg text-grey-200 mb-8 w-4xl mx-auto whitespace-pre-line">
+      <p className="text-center text-lg text-grey-400 mb-8 w-4xl mx-auto whitespace-pre-line">
         {homepage.about.aboutText}
       </p>
       <Link href="/About">

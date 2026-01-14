@@ -17,7 +17,7 @@ export default function Home() {
         <StatsStrip />
         <ServicesPreview />
         <ValueProps />
-        <FeaturedProjects />
+        {/* <FeaturedProjects /> */}
         {/* <ContactSection /> */}
         <ContactBanner />
       </div>
