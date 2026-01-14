@@ -1,5 +1,3 @@
-"use client";
-
 import { ContactType } from "@/types";
 import ContactForm from "./ContactForm";
 

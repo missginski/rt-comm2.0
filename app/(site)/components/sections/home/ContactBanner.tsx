@@ -40,9 +40,7 @@ export default async function ContactBanner() {
             </Link>
           </div>
         </div>
-
       </div>
-
     </section>
   );
 }

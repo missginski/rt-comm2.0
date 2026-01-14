@@ -16,43 +16,7 @@ export async function ServicesPreview() {
         <p className="text-sm md:text-base text-grey-400 w-1/2">
           {homepage.services.description}
         </p>
-
-
-        {/* <div className="grid gap-8 md:grid-cols-3">
-          {homepage.services.serviceItems.map((item) => (
-            <div
-              key={item.title}
-              className="
-                group border border-white/10 rounded-xl p-8 
-                transition-all duration-300 
-                hover:border-red hover:bg-charcoal-mid 
-                hover:-translate-y-1 cursor-pointer
-                hover:shadow-[0_0_30px_rgba(232,66,58,0.15)]">
-              <h3 className="text-xl font-semibold text-grey-100 mb-4">
-                {item.title}
-              </h3>
-
-              <p className="text-grey-400 text-sm leading-relaxed mb-6">
-                {item.description}
-              </p>
-
-              <span className="text-red text-sm font-medium inline-flex items-center group-hover:text-red transition-colors">
-                Learn more
-                <svg
-                  className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </span>
-            </div>
-          ))}
-        </div> */}
         
-
         <ServicesAccordion
           items={homepage.services.serviceItems}
         />
