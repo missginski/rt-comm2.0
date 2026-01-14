@@ -3,8 +3,9 @@ import StatsStrip from "./components/sections/home/StatsStrip";
 import { ServicesPreview } from "./components/sections/home/ServicesPreview";
 import ValueProps from "./components/sections/home/ValProps";
 import FeaturedProjects from "./components/sections/home/FeaturedProjects";
-import ContactSection from "./components/sections/home/ContactSection";
+// import ContactSection from "./components/sections/home/ContactSection";
 import HomeAbout from "./components/sections/home/HomeAbout";
+import ContactBanner from "./components/sections/home/ContactBanner";
 
 export default function Home() {
 
@@ -17,7 +18,8 @@ export default function Home() {
         <ServicesPreview />
         <ValueProps />
         <FeaturedProjects />
-        <ContactSection />
+        {/* <ContactSection /> */}
+        <ContactBanner />
       </div>
     </main>
   )

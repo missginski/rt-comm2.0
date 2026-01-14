@@ -1,5 +1,6 @@
 import { getHomepage } from "@/sanity/sanity.query";
 import type { HomepageType } from "@/types";
+import Link from "next/link";
 
 export default async function HomeHero() {
   const homepage: HomepageType = await getHomepage();
@@ -22,16 +23,19 @@ export default async function HomeHero() {
               <p className="pb-12 text-2xl whitespace-pre-line">
                 {homepage.hero.heroSubhead}
               </p>
-              <button className="
-                bg-[var(--color-primary)]
-                hover:bg-[var(--color-primary-soft)]
-                text-white
-                font-semibold
-                rounded-full px-6 py-2.5
-                transition-colors
-              ">
-                {homepage.hero.heroBtnText}
-              </button>
+              <Link 
+                href="/contact">
+                <button className="
+                  bg-[var(--color-primary)]
+                  hover:bg-[var(--color-primary-soft)]
+                  text-white
+                  font-semibold
+                  rounded-full px-6 py-2.5
+                  transition-colors
+                ">
+                  {homepage.hero.heroBtnText}
+                </button>
+              </Link>
             </div>
           </div>
         </div>

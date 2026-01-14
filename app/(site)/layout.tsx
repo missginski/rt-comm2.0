@@ -28,10 +28,10 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
+    <div className={`${inter.variable} ${montserrat.variable} antialiased`}>
       <Header />
       {children}
       <Footer />
-    </body>
+    </div>
   );
 }

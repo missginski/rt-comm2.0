@@ -89,12 +89,12 @@ export default function Header() {
               Home
             </Link> */}
             <Link 
-              href="/About"
+              href="/about"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               About
             </Link>
             <Link 
-              href="/Services"
+              href="/services"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               Services
             </Link>
@@ -104,7 +104,7 @@ export default function Header() {
               Project Spotlight
             </Link>
             <Link 
-              href="/Contact"
+              href="/contact"
               className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
               Contact
             </Link>

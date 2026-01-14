@@ -42,26 +42,6 @@ export type HomepageType = {
       icon: "string";
     }[];
   }
-  contact: {
-    title: "string";
-    description: "string";
-    imageUrl: string;
-    image: { 
-      alt: string 
-    };
-    contactItems: {
-      name: "string";
-      phone: "string";
-      email: "string";
-    }[];
-    address: {
-      street: "string";
-      line2: "string";
-      city: "string";
-      state: "string";
-      zipcode: "string";
-    }[];
-  }
 };
 
 export type ProjectType = {
@@ -74,4 +54,24 @@ export type ProjectType = {
   imageAlt: string;
   location: string;
   client: string;
+}
+
+export type ContactType = {
+  _id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  contactItems: {
+    name: string;
+    phone: string;
+    email: string;
+  }[];
+  address: {
+    street: string;
+    line2: string;
+    city: string;
+    state: string;
+    zipcode: string;
+  }[];
 }

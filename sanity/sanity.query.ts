@@ -66,6 +66,30 @@ export async function getHomepage() {
   );
 }
 
+export async function getContactPage() {
+  return client.fetch(
+    groq`*[_type == "contactPage"][0]{
+      _id,
+      title,
+      description,
+      "imageUrl": image.asset->url,
+      "imageAlt": image.alt,
+      contactItems[]{
+        name,
+        email,
+        phone,
+      },
+      address[]{
+        street,
+        line2,
+        city,
+        state,
+        zipcode
+      }
+    }`
+  );
+}
+
 export async function getProject() {
   return client.fetch(
     groq`*[_type == "project"]{
