@@ -8,9 +8,7 @@ export default async function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-[var(--color-charcoal-dark)]">
-      
       <div className="mx-auto max-w-[1360px] px-10 py-8 md:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        {/* Left: brand + blurb */}
         <div>
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[var(--color-grey-400)]">
             <Image
@@ -24,8 +22,6 @@ export default async function Footer() {
             {siteSettings.footerText}
           </p>
         </div>
-
-        {/* Right: nav + copyright */}
         <div className="flex flex-col items-start gap-3 md:items-end">
           <nav className="flex flex-wrap gap-4 text-xs md:text-sm text-[var(--color-grey-400)]">
             <Link href="/" className="hover:text-[var(--color-grey-100)] transition-colors">
@@ -44,7 +40,6 @@ export default async function Footer() {
               Contact
             </Link>
           </nav>
-
           <p className="text-[11px] text-[var(--color-grey-400)]/70">
             © {new Date().getFullYear()} Real Time Communications. All rights reserved.
           </p>
