@@ -20,7 +20,7 @@ export default async function ContactBanner() {
               <h3 className="text-3xl md:text-4xl font-display font-semibold text-grey-100 mb-3">
                 {homepage.contact.title}
               </h3>
-              <p className="text-grey-400 max-w-lg">
+              <p className="text-grey-400 text-lg max-w-lg">
                 {homepage.contact.description}
               </p>
             </div>

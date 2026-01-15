@@ -1,23 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SiteSettingsType } from "@/types";
+import { getSiteSettings } from "@/sanity/sanity.query";
 
-export default function Footer() {
+export default async function Footer() {
+  const siteSettings = await getSiteSettings();
+
   return (
     <footer className="border-t border-white/10 bg-[var(--color-charcoal-dark)]">
+      
       <div className="mx-auto max-w-[1360px] px-10 py-8 md:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         {/* Left: brand + blurb */}
         <div>
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[var(--color-grey-400)]">
             <Image
-              src="/images/logo.png"
-              alt="RTC logo"
+              src={siteSettings.logoImageUrl}
+              alt={siteSettings.logoImageAlt}
               width={200}
               height={78}
             />
           </p>
           <p className="mt-2 text-xs text-[var(--color-grey-400)]/80 max-w-md">
-            Fiber installation, splicing, and testing for critical
-            infrastructure across the region.
+            {siteSettings.footerText}
           </p>
         </div>
 

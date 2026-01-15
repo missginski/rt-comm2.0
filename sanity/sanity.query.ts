@@ -135,8 +135,7 @@ export async function getSiteSettings() {
       "logoImageAlt": brandLogo.alt,
       "unionImageUrl": unionLogo.asset->url,
       "unionImageAlt": unionLogo.alt,
-    }`
-  );
+  }`);
 }
 
 

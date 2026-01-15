@@ -28,7 +28,7 @@ export default async function ValueProps() {
             <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
               {homepage.valProps.title}
             </h2>
-            <p className="text-sm md:text-base text-grey-400 mb-8 max-w-xl">
+            <p className="text-sm md:text-lg text-grey-400 mb-8 max-w-xl">
               {homepage.valProps.description}
             </p>
 
@@ -48,7 +48,7 @@ export default async function ValueProps() {
                     </span>
                   );
                 })()}
-                <span className="">{prop.description}</span>
+                <span className="text-lg">{prop.description}</span>
               </li>
               ))}
             </ul>

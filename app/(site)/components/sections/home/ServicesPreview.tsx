@@ -13,7 +13,7 @@ export async function ServicesPreview() {
         <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
           {homepage.services.title}
         </h2>
-        <p className="text-sm md:text-base text-grey-400 w-1/2">
+        <p className="text-sm md:text-lg text-grey-400 w-1/2">
           {homepage.services.description}
         </p>
         

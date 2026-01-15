@@ -83,10 +83,9 @@ export type ContactType = {
 
 export type SiteSettingsType = {
   _id: string;
-  title: string;
-  description: string;
-  logoimageUrl: string;
-  logoimageAlt: string;
-  brandimageUrl: string;
-  brandimageAlt: string;
+  footerText?: string;
+  logoImageUrl?: string;
+  logoImageAlt?: string;
+  unionImageUrl?: string;
+  unionImageAlt?: string;
 }
