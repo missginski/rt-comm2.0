@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Real-Time Communications",
-  description: "",
-  robots:
-    process.env.NEXT_PUBLIC_ENV === "staging"
-      ? { index: false, follow: false }
-      : undefined,
+  description: "Reliable installation, splicing, and testing for critical infrastructure.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({

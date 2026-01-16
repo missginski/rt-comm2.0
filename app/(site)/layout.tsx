@@ -17,9 +17,13 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Real-Time Communications",
-  description: "",
+  description: "Reliable installation, splicing, and testing for critical infrastructure.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function SiteLayout({
