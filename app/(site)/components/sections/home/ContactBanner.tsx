@@ -7,20 +7,20 @@ export default async function ContactBanner() {
 
   return(
     <section 
-      className="bg-charcoal-mid bg-cover relative h-[285px]"
+      className="bg-charcoal-mid bg-cover relative sm:h-[285px] h-[350px]"
       style={{
         backgroundImage: `url(${homepage.contact.imageUrl})`,
       }}
     >
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent backdrop-blur-[3px] bg-black/40">
-        <div className="mx-auto container max-w-xl px-10 py-16 md:py-20">
+        <div className="mx-auto container max-w-xl px-10 py-12 md:py-14 lg:py-18">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <h3 className="text-3xl md:text-4xl font-display font-semibold text-grey-100 mb-3">
                 {homepage.contact.title}
               </h3>
-              <p className="text-grey-400 text-lg max-w-lg">
+              <p className="text-grey-400 text-base md:text-lg max-w-lg">
                 {homepage.contact.description}
               </p>
             </div>

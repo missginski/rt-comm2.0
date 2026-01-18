@@ -1,23 +1,23 @@
 import { getHomepage } from "@/sanity/sanity.query";
 import { HomepageType } from "@/types";
 import Link from "next/link";
-import ServicesAccordion from "./ServicesAccordion";
+import ServicesLower from "./ServicesLower";
 
 export async function ServicesPreview() {
   const homepage: HomepageType = await getHomepage();
 
   return (
-    <section className="bg-charcoal-dark py-20">
-      <div className="mx-auto container max-w-xl px-10">
+    <section className="bg-charcoal-dark">
+      <div className="mx-auto container max-w-xl p-standard-mobile md:p-standard">
 
-        <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-semibold text-grey-100 mb-4">
           {homepage.services.title}
         </h2>
-        <p className="text-sm md:text-lg text-grey-400 w-1/2">
+        <p className="text-base md:text-lg text-grey-400 w-full md:w-1/2 lg:mb-0 mb-4">
           {homepage.services.description}
         </p>
         
-        <ServicesAccordion
+        <ServicesLower
           items={homepage.services.serviceItems}
         />
 
@@ -26,7 +26,6 @@ export async function ServicesPreview() {
             bg-[var(--color-primary)]
             hover:bg-[var(--color-primary-soft)]
             mx-auto
-            mt-12
             block
             text-white
             font-semibold

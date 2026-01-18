@@ -7,7 +7,7 @@ export default async function FeaturedProjects() {
 
   return (
     <section className="bg-charcoal-dark py-20">
-      <div className="mx-auto container max-w-xl px-10">
+      <div className="mx-auto container max-w-xl p-standard-mobile md:p-standard">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100">
             Recent Projects

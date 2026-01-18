@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-export default function ServicesAccordion({
+export default function ServicesLower({
   items,
 }: {
   items: {
@@ -21,8 +21,26 @@ export default function ServicesAccordion({
   const activeAlt = items[activeIndex]?.imageAlt ?? items[activeIndex]?.title ?? "";
 
   return (
-    <div className="flex items-center gap-8">
-      {/* Left: Accordion */}
+    <div className="flex items-center gap-8 lg:flex-row flex-col">
+      {/* Left: Image */}
+      <div className="relative w-full">
+        <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          {activeImage ? (
+            <img
+              key={activeImage}
+              src={activeImage}
+              alt={activeAlt}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div className="h-full w-full grid place-items-center text-grey-400">
+              No image
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Right: Accordion */}
       <div className="w-full space-y-4 h-[550px] flex flex-col justify-center">
         {items.map((item, idx) => { 
           const isOpen = openIndex === idx;
@@ -75,25 +93,6 @@ export default function ServicesAccordion({
           );
         })}
       </div>
-
-      {/* Right: Image */}
-      <div className="relative w-full">
-        <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-          {activeImage ? (
-            <img
-              key={activeImage}
-              src={activeImage}
-              alt={activeAlt}
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <div className="h-full w-full grid place-items-center text-grey-400">
-              No image
-            </div>
-          )}
-        </div>
-      </div>
-
     </div>
   );
 }

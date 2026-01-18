@@ -9,8 +9,8 @@ export default function ContactSectionClient({
   if (!contactPage) return null;
 
   return (
-    <section className="bg-charcoal-mid py-16 md:py-30">
-      <div className="mx-auto container max-w-xl px-10">
+    <section className="bg-charcoal-mid">
+      <div className="mx-auto container max-w-xl p-standard-mobile md:p-standard">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-center">
           <div>
             {/* <p className="text-xs font-semibold tracking-[0.25em] uppercase text-white/40 mb-3">

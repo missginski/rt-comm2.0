@@ -10,17 +10,17 @@ export default async function HomeHero() {
   return (
     <main className="bg-charcoal-dark">
       <div 
-        className="h-[850px] relative bg-cover"
+        className="h-[100vh] md:h-[80vh] relative bg-cover"
         style={{
           backgroundImage: `url(${homepage.hero.heroImageUrl})`,
         }}>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80  to-transparent backdrop-blur-[3px] bg-black/40">
           <div className="h-full flex items-center justify-end flex-col text-text-main">
-            <div className="container max-w-xl p-standard mx-auto">
-              <h1 className="font-display text-6xl py-6 font-semibold tracking-tight whitespace-pre-line">
+            <div className="container max-w-xl p-standard-mobile md:p-standard mx-auto">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl py-6 font-semibold tracking-tight whitespace-pre-line">
                 {homepage.hero.heroHeadline}
               </h1>
-              <p className="pb-12 text-2xl whitespace-pre-line">
+              <p className="pb-8 md:pb-12 text-xl md:text-2xl whitespace-pre-line">
                 {homepage.hero.heroSubhead}
               </p>
               <Link 

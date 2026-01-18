@@ -30,6 +30,7 @@
 
   --spacing-standard: 6rem 3rem;
   --spacing-standard-lg: 5rem;
+  --spacing-standard-mobile: 1.5rem;
 }
 
 body {
