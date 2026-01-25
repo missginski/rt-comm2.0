@@ -1,28 +1,56 @@
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidateTag } from "next/cache";
 
 export async function POST(req: NextRequest) {
-  const secret = req.nextUrl.searchParams.get("secret");
+  const secret =
+    req.nextUrl.searchParams.get("secret") ||
+    req.headers.get("x-revalidate-secret");
 
   if (!secret || secret !== process.env.REVALIDATE_SECRET) {
-    return NextResponse.json({ ok: false, message: "Invalid secret" }, { status: 401 });
-    }
+    return NextResponse.json(
+      { ok: false, message: "Invalid secret" },
+      { status: 401 }
+    );
+  }
 
   let body: any = null;
   try {
     body = await req.json();
   } catch {}
 
-  revalidatePath("/");
-  revalidatePath("/about");
-  revalidatePath("/services");
-  revalidatePath("/contact");
-  // revalidatePath("/projects");
+  const type = body?._type;
+
+  if (type === "homepage") {
+    revalidateTag("homepage", "max");
+  }
+
+  if (type === "contactPage") {
+    revalidateTag("contactPage", "max");
+  }
+
+  if (type === "project") {
+    revalidateTag("projects", "max");
+
+    const slug = body?.slug?.current;
+    if (slug) {
+      revalidateTag(`project:${slug}`, "max");
+    }
+  }
+
+  if (type === "siteSettings") {
+    revalidateTag("siteSettings", "max");
+  }
+
+  if (!type) {
+    revalidateTag("homepage", "max");
+    revalidateTag("projects", "max");
+    revalidateTag("siteSettings", "max");
+  }
 
   return NextResponse.json({
     ok: true,
     revalidated: true,
-    type: body?._type ?? null,
+    type: type ?? null,
     id: body?._id ?? null,
   });
 }
