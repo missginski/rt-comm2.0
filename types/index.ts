@@ -19,31 +19,31 @@ export type HomepageType = {
     }[];
   }
   services: {
-    title: "string";
-    btnText: "string";
-    description: "string";
+    title: string;
+    btnText: string;
+    description: string;
     serviceItems: {
-      title: "string";
-      description: "text";
-      imageUrl: string; 
+      title: string;
+      description: string;
+      image?: any;
       imageAlt?: string;
     }[];
   }
   valProps: {
-    title: "string";
-    description: "string";
+    title: string;
+    description: string;
     imageUrl: string;
     image: { 
       alt: string 
     };
     valPropItems: {
-      description: "string";
-      icon: "string";
+      description: string;
+      icon: string;
     }[];
   }
   contact: {
-    title: "string";
-    description: "string";
+    title: string;
+    description: string;
     imageUrl: string;
     btnText: string;
   }

@@ -9,6 +9,11 @@ export async function getHomepage() {
         heroSubhead,
         heroBtnText,
         "heroImageUrl": heroImage.asset->url,
+        heroImage {
+          asset->,
+          crop,
+          hotspot
+        }
       },
       about{
         aboutHeadline,
@@ -28,16 +33,25 @@ export async function getHomepage() {
         serviceItems[]{
           title,
           description,
-          "imageUrl": image.asset->url,
-          "imageAlt": image.alt,
-        } 
+          imageAlt,
+          image{
+            asset->{
+              _id
+            },
+            crop,
+            hotspot
+          }
+        }
       },
       valProps{
         title,
         description,
         "imageUrl": image.asset->url,
         image{
-          alt
+          alt,
+          asset->,
+          crop,
+          hotspot,
         },
         valPropItems[]{
           description,
@@ -48,6 +62,11 @@ export async function getHomepage() {
         title,
         description,
         "imageUrl": image.asset->url,
+        image {
+          asset->,
+          crop,
+          hotspot
+        },
         btnText,
       },
     }`,
@@ -66,6 +85,11 @@ export async function getContactPage() {
       description,
       "imageUrl": image.asset->url,
       "imageAlt": image.alt,
+      image {
+        asset->,
+        crop,
+        hotspot
+      }
       contactItems[]{
         name,
         email,
@@ -98,6 +122,11 @@ export async function getProject() {
       "slug": slug.current,
       "imageUrl": image.asset->url,
       "imageAlt": image.alt
+      image {
+        asset->,
+        crop,
+        hotspot
+      }
     }`,
     {},
     {
@@ -116,7 +145,12 @@ export async function getProjectBySlug(slug: string) {
       client,
       location,
       "imageUrl": image.asset->url,
-      "imageAlt": image.alt
+      "imageAlt": image.alt,
+      image {
+        asset->,
+        crop,
+        hotspot
+      }
     }`,
     { slug },
     {
@@ -136,7 +170,12 @@ export async function getProjectsPreview() {
       client,
       location,
       "imageUrl": image.asset->url,
-      "imageAlt": image.alt
+      "imageAlt": image.alt,
+      image {
+        asset->,
+        crop,
+        hotspot
+      }
     }`,
     {},
     {

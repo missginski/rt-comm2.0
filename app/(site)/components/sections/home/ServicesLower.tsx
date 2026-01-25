@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
+import { urlFor } from "@/sanity/lib/image";
 
 export default function ServicesLower({
   items,
@@ -8,7 +9,7 @@ export default function ServicesLower({
   items: {
     title: string;
     description: string;
-    imageUrl: string;
+    image?: any;
     imageAlt?: string;
   }[];
 }) {
@@ -16,27 +17,30 @@ export default function ServicesLower({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const activeIndex = hoveredIndex ?? openIndex ?? 0;
-
-  const activeImage = items[activeIndex]?.imageUrl;
+  const activeItem = items[activeIndex];
   const activeAlt = items[activeIndex]?.imageAlt ?? items[activeIndex]?.title ?? "";
+  const activeImageObj = items[activeIndex]?.image;
+
+  const activeImageUrl = activeImageObj
+    ? urlFor(activeImageObj)
+        .width(1600)
+        .height(1200)
+        .fit("crop")
+        .auto("format")
+        .url()
+    : undefined;
 
   return (
     <div className="flex items-center gap-8 lg:flex-row flex-col">
       {/* Left: Image */}
       <div className="relative w-full">
         <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-          {activeImage ? (
-            <img
-              key={activeImage}
-              src={activeImage}
-              alt={activeAlt}
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <div className="h-full w-full grid place-items-center text-grey-400">
-              No image
-            </div>
-          )}
+          <img
+            key={activeImageUrl}
+            src={activeImageUrl}
+            alt={activeAlt}
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
 
