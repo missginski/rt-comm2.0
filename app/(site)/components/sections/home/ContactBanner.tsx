@@ -1,16 +1,25 @@
 import Link from "next/link";
 import { getHomepage } from "@/sanity/sanity.query";
 import { HomepageType } from "@/types";
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function ContactBanner() {
   const homepage: HomepageType = await getHomepage();
+  if (!homepage) return null;
+
+  const bgUrl = homepage.contact.image
+    ? urlFor(homepage.contact.image)
+        .width(2400)
+        .height(1350)
+        .fit("crop")
+        .auto("format")
+        .url()
+    : homepage.contact.imageUrl;
 
   return(
     <section 
       className="bg-charcoal-mid bg-cover relative sm:h-[285px] h-[350px]"
-      style={{
-        backgroundImage: `url(${homepage.contact.imageUrl})`,
-      }}
+      style={{ backgroundImage: `url(${bgUrl})` }}
     >
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent backdrop-blur-[3px] bg-black/40">

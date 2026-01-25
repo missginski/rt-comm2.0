@@ -23,8 +23,8 @@ export default function ServicesLower({
 
   const activeImageUrl = activeImageObj
     ? urlFor(activeImageObj)
-        .width(1600)
-        .height(1200)
+        .width(800)
+        .height(600)
         .fit("crop")
         .auto("format")
         .url()

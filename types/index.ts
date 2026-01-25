@@ -1,23 +1,34 @@
 
+type SanityImage = {
+  asset?: { _id: string };
+  crop?: any;
+  hotspot?: any;
+};
+
 export type HomepageType = {
   _id: string;
+
   hero: {
     heroHeadline: string;
     heroSubhead: string;
     heroBtnText: string;
     heroImageUrl: string;
+    heroImage?: SanityImage;
   };
+
   about: {
     aboutHeadline: string;
     aboutText: string;
     aboutBtnText: string;
   };
+
   stats: {
     statItems: {
       label: string;
       value: number;
     }[];
-  }
+  };
+
   services: {
     title: string;
     btnText: string;
@@ -25,29 +36,32 @@ export type HomepageType = {
     serviceItems: {
       title: string;
       description: string;
-      image?: any;
+      image?: SanityImage;
       imageAlt?: string;
     }[];
-  }
+  };
+
   valProps: {
     title: string;
     description: string;
-    imageUrl: string;
-    image: { 
-      alt: string 
-    };
+    imageUrl?: string;
+    imageAlt?: string;
+    image?: SanityImage;
     valPropItems: {
       description: string;
       icon: string;
     }[];
-  }
+  };
+
   contact: {
     title: string;
     description: string;
-    imageUrl: string;
+    imageUrl?: string;
+    image?: SanityImage;
     btnText: string;
-  }
+  };
 };
+
 
 export type ProjectType = {
   _id: string;
@@ -65,6 +79,7 @@ export type ContactType = {
   _id: string;
   title: string;
   description: string;
+  image?: any;
   imageUrl: string;
   imageAlt: string;
   contactItems: {

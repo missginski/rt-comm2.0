@@ -46,17 +46,16 @@ export async function getHomepage() {
       valProps{
         title,
         description,
-        "imageUrl": image.asset->url,
+        valPropItems[]{description, icon},
         image{
-          alt,
-          asset->,
+          asset->{
+            _id
+          },
           crop,
-          hotspot,
+          hotspot
         },
-        valPropItems[]{
-          description,
-          icon,
-        }
+        "imageUrl": image.asset->url,
+        "imageAlt": image.alt
       },
       contact{
         title,
@@ -85,11 +84,11 @@ export async function getContactPage() {
       description,
       "imageUrl": image.asset->url,
       "imageAlt": image.alt,
-      image {
-        asset->,
+      image{
+        asset->{ _id },
         crop,
         hotspot
-      }
+      },
       contactItems[]{
         name,
         email,

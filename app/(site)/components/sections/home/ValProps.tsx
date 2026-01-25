@@ -1,9 +1,21 @@
 import { getHomepage } from "@/sanity/sanity.query";
 import { HomepageType } from "@/types";
 import { getIcon } from "@/sanity/lib/lucideIcons";
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function ValueProps() {
   const homepage: HomepageType = await getHomepage();
+
+  const imgSrc = homepage.valProps.image
+  ? urlFor(homepage.valProps.image)
+      .width(1200)
+      .height(900) 
+      .fit("crop")
+      .auto("format")
+      .url()
+  : homepage.valProps.imageUrl;
+
+  const imgAlt = homepage.valProps.imageAlt ?? "";
 
   return (
     <section className="bg-charcoal-mid">
@@ -42,9 +54,10 @@ export default async function ValueProps() {
           <div className="relative lg:w-1/2 w-full">
             <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               <img
-                src={homepage.valProps.imageUrl}
-                alt={homepage.valProps.image.alt}
+                src={imgSrc}
+                alt={imgAlt}
                 className="h-full w-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>

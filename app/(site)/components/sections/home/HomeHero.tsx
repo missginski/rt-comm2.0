@@ -1,19 +1,27 @@
 import { getHomepage } from "@/sanity/sanity.query";
 import type { HomepageType } from "@/types";
 import Link from "next/link";
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function HomeHero() {
   const homepage: HomepageType = await getHomepage();
-
   if (!homepage) return null;
+
+  const bgUrl = homepage.hero.heroImage
+    ? urlFor(homepage.hero.heroImage)
+        .width(2400)
+        .height(1350)
+        .fit("crop")
+        .auto("format")
+        .url()
+    : homepage.hero.heroImageUrl;
 
   return (
     <main className="bg-charcoal-dark">
-      <div 
-        className="h-[100vh] md:h-[85vh] relative bg-cover"
-        style={{
-          backgroundImage: `url(${homepage.hero.heroImageUrl})`,
-        }}>
+      <div
+        className="h-[100vh] md:h-[85vh] relative bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgUrl})` }}
+      >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80  to-transparent backdrop-blur-[3px] bg-black/40">
           <div className="h-full flex items-center justify-end flex-col text-text-main">
             <div className="container max-w-xl p-standard-mobile md:p-standard mx-auto">
