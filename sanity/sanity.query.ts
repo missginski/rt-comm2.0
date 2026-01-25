@@ -111,7 +111,7 @@ export async function getContactPage() {
 
 export async function getProject() {
   return client.fetch(
-    groq`*[_type == "project"]{
+    groq`*[_type == "project"][]{
       _id,
       title,
       description,
@@ -120,7 +120,7 @@ export async function getProject() {
       location,
       "slug": slug.current,
       "imageUrl": image.asset->url,
-      "imageAlt": image.alt
+      "imageAlt": image.alt,
       image {
         asset->,
         crop,
