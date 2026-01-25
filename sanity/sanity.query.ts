@@ -50,7 +50,11 @@ export async function getHomepage() {
         "imageUrl": image.asset->url,
         btnText,
       },
-    }`
+    }`,
+    {},
+    {
+      next: { tags: ["homepage"] },
+    }
   );
 }
 
@@ -74,7 +78,11 @@ export async function getContactPage() {
         state,
         zipcode
       }
-    }`
+    }`,
+    {},
+    {
+      next: { tags: ["contactPage"] },
+    }
   );
 }
 
@@ -90,7 +98,11 @@ export async function getProject() {
       "slug": slug.current,
       "imageUrl": image.asset->url,
       "imageAlt": image.alt
-    }`
+    }`,
+    {},
+    {
+      next: { tags: ["projects"] },
+    }
   );
 }
 
@@ -106,14 +118,17 @@ export async function getProjectBySlug(slug: string) {
       "imageUrl": image.asset->url,
       "imageAlt": image.alt
     }`,
-    { slug }
+    { slug },
+    {
+      next: { tags: ["projects", `project:${slug}`] },
+    }
   );
 }
 
 export async function getProjectsPreview() {
   return client.fetch(
     groq`*[_type == "project"] 
-  | order(coalesce(publishedAt, _createdAt) desc)[0...3]{
+    | order(coalesce(publishedAt, _createdAt) desc)[0...3]{
       _id,
       title,
       "slug": slug.current,
@@ -122,7 +137,11 @@ export async function getProjectsPreview() {
       location,
       "imageUrl": image.asset->url,
       "imageAlt": image.alt
-    }`
+    }`,
+    {},
+    {
+      next: { tags: ["projects"] },
+    }
   );
 }
 
@@ -135,10 +154,10 @@ export async function getSiteSettings() {
       "logoImageAlt": brandLogo.alt,
       "unionImageUrl": unionLogo.asset->url,
       "unionImageAlt": unionLogo.alt,
-  }`);
+    }`,
+    {},
+    {
+      next: { tags: ["siteSettings"] },
+    }
+  );
 }
-
-
-
-
-

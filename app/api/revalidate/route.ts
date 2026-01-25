@@ -8,14 +8,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, message: "Invalid secret" }, { status: 401 });
     }
 
-  // Sanity will POST a payload. We'll try to read it.
   let body: any = null;
   try {
     body = await req.json();
   } catch {}
 
-  // Super simple + stable: revalidate the paths that depend on CMS content
-  // Adjust these to your routes.
   revalidatePath("/");
   revalidatePath("/about");
   revalidatePath("/services");

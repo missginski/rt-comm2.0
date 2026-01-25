@@ -10,7 +10,7 @@ export default async function HomeHero() {
   return (
     <main className="bg-charcoal-dark">
       <div 
-        className="h-[100vh] md:h-[80vh] relative bg-cover"
+        className="h-[100vh] md:h-[85vh] relative bg-cover"
         style={{
           backgroundImage: `url(${homepage.hero.heroImageUrl})`,
         }}>
