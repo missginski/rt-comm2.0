@@ -14,6 +14,7 @@ export default function HeaderClient({
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const closeMenu = () => setOpen(false);
   const [showNav, setShowNav] = useState(true);
 
   const lastScrollY = useRef(0);
@@ -147,17 +148,20 @@ export default function HeaderClient({
           <div className="flex flex-col gap-6 text-lg">
             <Link 
               href="/"
-              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
+              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500"
+              onClick={closeMenu}>
               Home
             </Link>
             <Link 
               href="/about"
-              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
+              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500"
+              onClick={closeMenu}>
               About
             </Link>
             <Link 
               href="/services"
-              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
+              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500"
+              onClick={closeMenu}>
               Services
             </Link>
             {/* <Link 
@@ -167,7 +171,8 @@ export default function HeaderClient({
             </Link> */}
             <Link 
               href="/contact"
-              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500">
+              className="px-2.5 py-1.5 text-base font-medium text-grey-100 hover:text-primary-soft transition duration-500"
+              onClick={closeMenu}>
               Contact
             </Link>
           </div>
