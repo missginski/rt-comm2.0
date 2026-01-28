@@ -166,7 +166,8 @@ export default function HeaderClient({
             </Link>
             {/* <Link 
               href="/projects"
-              className="px-2.5 py-1.5 text-base font-medium text-grey-100 w-[150px] hover:text-primary-soft transition duration-500">
+              className="px-2.5 py-1.5 text-base font-medium text-grey-100 w-[150px] hover:text-primary-soft transition duration-500"
+              onClick={closeMenu}>
               Project Spotlight
             </Link> */}
             <Link 
