@@ -62,6 +62,28 @@ export type HomepageType = {
   };
 };
 
+export type AboutPageType = {
+  _id: string;
+
+  hero: {
+    headline: string;
+    subhead: string;
+    bgImageUrl: string;
+    bgImage?: SanityImage;
+  };
+
+  about: {
+    aboutHeadline: string;
+    aboutText: string;
+  };
+
+  caertification: {
+    certItems: {
+      title: string;
+      image: string;
+    }[];
+  };
+}
 
 export type ProjectType = {
   _id: string;

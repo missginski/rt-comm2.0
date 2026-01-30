@@ -76,6 +76,42 @@ export async function getHomepage() {
   );
 }
 
+export async function getAboutPage() {
+  return client.fetch(
+    groq`*[_type == "aboutPage"][0]{
+      hero{
+        headline,
+        subhead,
+        "bgImageUrl": bgImage.asset->url,
+        bgImage {
+          asset->,
+          crop,
+          hotspot
+        }
+      },
+      about{
+        aboutHeadline,
+        aboutText
+      },
+      certification{
+        certItems[]{
+          title,
+          "logoImageUrl": image.asset->url,
+          image {
+            asset->,
+            crop,
+            hotspot
+          }
+        }
+      },
+    }`,
+    {},
+    {
+      next: { tags: ["aboutPage"] },
+    }
+  );
+}
+
 export async function getContactPage() {
   return client.fetch(
     groq`*[_type == "contactPage"][0]{

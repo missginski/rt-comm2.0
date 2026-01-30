@@ -24,6 +24,10 @@ export async function POST(req: NextRequest) {
     revalidateTag("homepage", "max");
   }
 
+  if (type === "aboutPage") {
+    revalidateTag("aboutPage", "max");
+  }
+
   if (type === "contactPage") {
     revalidateTag("contactPage", "max");
   }

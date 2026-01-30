@@ -1,8 +1,16 @@
-
+import AboutHero from "./AboutHero"
+import AboutText from "./AboutText"
+import Certifications from "./Certifications"
+import ContactBanner from "../components/sections/home/ContactBanner"
 
 export default function AboutPage() {
 
   return(
-    <h1 className="py-30">About Coming Soon</h1>
+    <main>
+      <AboutHero />
+      <AboutText />
+      <Certifications />
+      <ContactBanner />
+    </main>
   )
 }
