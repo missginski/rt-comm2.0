@@ -77,10 +77,10 @@ export type AboutPageType = {
     aboutText: string;
   };
 
-  caertification: {
+  certification: {
     certItems: {
       title: string;
-      image: string;
+      logoImageUrl: string;
     }[];
   };
 }

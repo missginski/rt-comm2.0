@@ -3,7 +3,7 @@ import { AboutPageType } from "@/types";
 
 
 export default async function Certifications() {
-  const aboutPage = await getAboutPage();
+  const aboutPage: AboutPageType = await getAboutPage();
   const certs = aboutPage?.certification?.certItems ?? [];
 
   return(
@@ -13,7 +13,7 @@ export default async function Certifications() {
         <div className="cert-wrapper flex justify-between">
           {certs.map((cert) => (
             <div key={cert.title} className="cert w-[220px]">
-              <img src="/images/IBEW.png" alt={cert.title} />
+              <img src={cert.logoImageUrl} alt={cert.title} />
               <h3 className="text-center pt-4 text-xl">{cert.title} </h3>
             </div>
           ))}
