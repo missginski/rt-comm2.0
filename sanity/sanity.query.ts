@@ -162,7 +162,7 @@ export async function getSiteSettings() {
   );
 }
 
-export async function getService() {
+export async function getServices() {
   return client.fetch(
     groq`*[_type == "service"]{
       _id,

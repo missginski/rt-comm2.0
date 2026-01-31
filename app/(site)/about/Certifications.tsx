@@ -1,7 +1,6 @@
 import { getAboutPage } from "@/sanity/sanity.query";
 import { AboutPageType } from "@/types";
 
-
 export default async function Certifications() {
   const aboutPage: AboutPageType = await getAboutPage();
   const certs = aboutPage?.certification?.certItems ?? [];

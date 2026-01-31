@@ -85,6 +85,16 @@ export type AboutPageType = {
   };
 }
 
+export type ServiceType = {
+  _id: string;
+  title: string;
+  bodyText: string;
+  excerpt: string;
+  image?: any;
+  imageUrl: string;
+  imageAlt: string;
+}
+
 export type ProjectType = {
   _id: string;
   title: string;
