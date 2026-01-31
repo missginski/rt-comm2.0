@@ -145,6 +145,54 @@ export async function getContactPage() {
   );
 }
 
+export async function getSiteSettings() {
+  return client.fetch(
+    groq`*[_type == "siteSettings"][0]{
+      _id,
+      footerText,
+      "logoImageUrl": brandLogo.asset->url,
+      "logoImageAlt": brandLogo.alt,
+      "unionImageUrl": unionLogo.asset->url,
+      "unionImageAlt": unionLogo.alt,
+    }`,
+    {},
+    {
+      next: { tags: ["siteSettings"] },
+    }
+  );
+}
+
+export async function getService() {
+  return client.fetch(
+    groq`*[_type == "service"]{
+      _id,
+      title,
+      bodyText,
+      excerpt,
+      "imageUrl": image.asset->url,
+      "imageAlt": image.alt,
+      image {
+        asset->,
+        crop,
+        hotspot
+      }
+    }`,
+    {},
+    {
+      next: { tags: ["services"] },
+    }
+  );
+}
+
+
+
+
+
+
+
+
+
+// Projects Queries -- CURRENTLY NOT IN USE
 export async function getProject() {
   return client.fetch(
     groq`*[_type == "project"][]{
@@ -219,19 +267,4 @@ export async function getProjectsPreview() {
   );
 }
 
-export async function getSiteSettings() {
-  return client.fetch(
-    groq`*[_type == "siteSettings"][0]{
-      _id,
-      footerText,
-      "logoImageUrl": brandLogo.asset->url,
-      "logoImageAlt": brandLogo.alt,
-      "unionImageUrl": unionLogo.asset->url,
-      "unionImageAlt": unionLogo.alt,
-    }`,
-    {},
-    {
-      next: { tags: ["siteSettings"] },
-    }
-  );
-}
+
