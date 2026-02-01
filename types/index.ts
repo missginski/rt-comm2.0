@@ -95,6 +95,15 @@ export type ServiceType = {
   imageAlt: string;
 }
 
+export type ServicesPageType = {
+  hero: {
+    headline: string;
+    subhead: string;
+    bgImageUrl: string;
+    bgImage?: SanityImage;
+  };
+}
+
 export type ProjectType = {
   _id: string;
   title: string;

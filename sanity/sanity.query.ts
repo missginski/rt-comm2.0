@@ -184,6 +184,27 @@ export async function getServices() {
   );
 }
 
+export async function getServicesPage() {
+  return client.fetch(
+    groq`*[_type == "servicesPage"][0]{
+      _id,
+      hero{
+        headline,
+        subhead,
+        bgImage{
+          asset->,
+          crop,
+          hotspot
+        }
+      }
+    }`,
+    {},
+    {
+      next: { tags: ["servicesPage"] },
+    }
+  );
+}
+
 
 
 

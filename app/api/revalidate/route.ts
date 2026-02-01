@@ -36,6 +36,10 @@ export async function POST(req: NextRequest) {
     revalidateTag("services", "max");
   }
 
+  if (type === "servicesPage") {
+    revalidateTag("servicesPage", "max");
+  }
+
   if (type === "project") {
     revalidateTag("projects", "max");
 

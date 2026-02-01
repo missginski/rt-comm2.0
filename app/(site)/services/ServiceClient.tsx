@@ -1,17 +1,12 @@
-import ServiceHero from "./ServiceHero";
-import ContactBanner from "../components/sections/home/ContactBanner";
-import ServiceClient from "./ServiceClient"
+import { getServices } from "@/sanity/sanity.query"
+import { ServiceType } from "@/types"
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function ServicesPage() {
-  
+  const services: ServiceType[] = await getServices();
 
-  return(
-    <section>
-      <ServiceHero />
-
-      <ServiceClient />
-
-      {/* <div className="mx-auto container max-w-xl px-10 py-34">
+  return (
+    <div className="mx-auto container max-w-xl px-10 py-34">
 
         <ul className="space-y-6">
 
@@ -44,13 +39,6 @@ export default async function ServicesPage() {
           })}
 
         </ul>
-      </div> */}
-
-      <ContactBanner />
-
-    </section>
-
-    
-    
-  )
+      </div>
+  );
 }
