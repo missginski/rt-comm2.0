@@ -30,18 +30,6 @@ export async function getHomepage() {
         title,
         description,
         btnText,
-        serviceItems[]{
-          title,
-          description,
-          imageAlt,
-          image{
-            asset->{
-              _id
-            },
-            crop,
-            hotspot
-          }
-        }
       },
       valProps{
         title,

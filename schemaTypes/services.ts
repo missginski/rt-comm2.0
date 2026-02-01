@@ -1,7 +1,7 @@
 import { defineType, defineField } from "sanity";
 import ServiceExcerptInput from "@/app/(site)/services/ServiceExcerptInput";
 
-const project = {
+const service = {
   name: "service",
   title: "Service",
   type: "document",
@@ -33,7 +33,7 @@ const project = {
       name: "excerpt",
       title: "Preview Text",
       type: "string",
-      description: "Shown on the /projects list. Use 1-3 sentences.",
+      description: "Shown on the /services list. Use 1-3 sentences.",
       options: { maxLength: 200 },
       components: {
         input: ServiceExcerptInput,
@@ -42,4 +42,4 @@ const project = {
   ]
 }
 
-export default project;
+export default service;

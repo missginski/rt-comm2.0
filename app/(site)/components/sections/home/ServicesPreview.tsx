@@ -1,10 +1,19 @@
-import { getHomepage } from "@/sanity/sanity.query";
-import { HomepageType } from "@/types";
+import { getHomepage, getServices } from "@/sanity/sanity.query";
+import { HomepageType, ServiceType } from "@/types";
 import Link from "next/link";
 import ServicesLower from "./ServicesLower";
 
 export async function ServicesPreview() {
   const homepage: HomepageType = await getHomepage();
+  const services: ServiceType[] = await getServices();
+
+  const items = services.map((s) => ({
+    title: s.title,
+    bodyText: s.bodyText,
+    excerpt: s.excerpt,
+    image: s.image,
+    imageAlt: s.imageAlt ?? s.title,
+  }));
 
   return (
     <section className="bg-charcoal-dark">
@@ -18,7 +27,7 @@ export async function ServicesPreview() {
         </p>
         
         <ServicesLower
-          items={homepage.services.serviceItems}
+          items={items}
         />
 
         <Link href="/services">

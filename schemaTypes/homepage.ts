@@ -119,42 +119,42 @@ const homepage = {
           title: "Button Text",
           type: "string",
         },
-        {
-          name: "serviceItems",
-          title: "Services",
-          type: "array",
-          of: [
-            {
-              type: "object",
-              fields: [
-                {
-                  name: "title",
-                  title: "Service Title",
-                  type: "string",
-                },
-                {
-                  name: "description",
-                  title: "Description",
-                  type: "text",
-                  rows: 3,
-                },
-                {
-                  name: "image",
-                  title: "Image",
-                  type: "image",
-                  options: { hotspot: true },
-                  fields: [
-                    {
-                      name: "alt",
-                      title: "Alt Text",
-                      type: "string"
-                    }
-                  ]
-                },
-              ]
-            }
-          ],
-        }
+        // {
+        //   name: "serviceItems",
+        //   title: "Services",
+        //   type: "array",
+        //   of: [
+        //     {
+        //       type: "object",
+        //       fields: [
+        //         {
+        //           name: "title",
+        //           title: "Service Title",
+        //           type: "string",
+        //         },
+        //         {
+        //           name: "description",
+        //           title: "Description",
+        //           type: "text",
+        //           rows: 3,
+        //         },
+        //         {
+        //           name: "image",
+        //           title: "Image",
+        //           type: "image",
+        //           options: { hotspot: true },
+        //           fields: [
+        //             {
+        //               name: "alt",
+        //               title: "Alt Text",
+        //               type: "string"
+        //             }
+        //           ]
+        //         },
+        //       ]
+        //     }
+        //   ],
+        // }
       ]
     },
     {

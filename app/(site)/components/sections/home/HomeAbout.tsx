@@ -13,7 +13,7 @@ export default async function HomeAbout() {
       <p className="text-center text-base md:text-lg text-grey-400 mb-8 max-w-4xl mx-auto whitespace-pre-line">
         {homepage.about.aboutText}
       </p>
-      <Link href="/About">
+      <Link href="/about">
         <button className="
           bg-[var(--color-primary)]
           hover:bg-[var(--color-primary-soft)]

@@ -8,7 +8,8 @@ export default function ServicesLower({
 }: {
   items: {
     title: string;
-    description: string;
+    bodyText: string;
+    excerpt: string;
     image?: any;
     imageAlt?: string;
   }[];
@@ -89,7 +90,7 @@ export default function ServicesLower({
               >
                 <div className="overflow-hidden">
                   <p className="px-4 pb-4 text-grey-400 text-base leading-relaxed">
-                    {item.description}
+                    {item.bodyText}
                   </p>
                 </div>
               </div>
