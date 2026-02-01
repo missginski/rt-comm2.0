@@ -206,13 +206,6 @@ export async function getServicesPage() {
 }
 
 
-
-
-
-
-
-
-
 // Projects Queries -- CURRENTLY NOT IN USE
 export async function getProject() {
   return client.fetch(
