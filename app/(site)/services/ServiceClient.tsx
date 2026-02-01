@@ -20,13 +20,18 @@ export default function ServicesIndexDetail({
   if (!services?.length || !active) return null;
 
   const imgUrl = active.image
-    ? urlFor(active.image).width(1200).height(700).fit("crop").auto("format").url()
+    ? urlFor(active.image)
+    .width(1200)
+    .height(700)
+    .fit("crop")
+    .auto("format")
+    .url()
     : null;
 
   return (
-    <div className="grid gap-6 md:grid-cols-[480px_1fr]">
+    <div className="grid gap-6 lg:grid-cols-[480px_1fr]">
 
-      {/* LEFT COLUMN — Service List */}
+      {/* Service List */}
       <div className="rounded-2xl bg-charcoal-mid/30">
         <div className="flex flex-col">
           {services.map((s) => {
@@ -59,7 +64,6 @@ export default function ServicesIndexDetail({
                       </div>
                     </div>
                   </div>
-
                 </div>
               </button>
 
@@ -68,10 +72,9 @@ export default function ServicesIndexDetail({
         </div>
       </div>
 
-      {/* RIGHT COLUMN — Detail Panel */}
+      {/* Detail Panel */}
       <div className="rounded-2xl bg-charcoal-mid/30 overflow-hidden">
 
-        {/* IMAGE */}
         {imgUrl && (
           <div className="h-56 md:h-72 w-full overflow-hidden">
             <img
@@ -93,74 +96,9 @@ export default function ServicesIndexDetail({
               {active.bodyText}
             </p>
           </div>
-
         </div>
 
       </div>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-
-// import { useState } from "react";
-// import { getServices } from "@/sanity/sanity.query"
-// import { ServiceType } from "@/types"
-// import { urlFor } from "@/sanity/lib/image";
-
-// export default async function ServicesPage() {
-//   const services: ServiceType[] = await getServices();
-//   const [openId, setOpenId] = useState<string | null>(services?.[0]?._id ?? null);
-
-//   return (
-//     <div className="mx-auto container max-w-xl px-10 py-34">
-
-//         <ul className="space-y-6">
-
-//           {services.map((s) => {
-//             const isOpen = openId === s._id;
-//             const imgSrc = urlFor(s.image)
-//               .width(600)
-//               .height(450)
-//               .fit("crop")
-//               .auto("format")
-//               .url();
-
-//             return (
-//               <li 
-//                 key={s._id} 
-//                 className="rounded-2xl bg-white/[0.02] transition hover:bg-white/[0.04] p-[1.5rem]"
-//               >
-//                 <div className="aspect-[4/3] overflow-hidden max-w-[600px] rounded-2xl border border-white/10 bg-white/5 m-auto">
-//                   <img 
-//                     src={imgSrc} 
-//                     alt={s.title} 
-//                     className="h-full w-full object-cover" 
-//                     loading="lazy" />
-//                 </div>
-//                 <h2 className="text-2xl my-2">{s.title}</h2>
-//                 <p className="text-base whitespace-pre-line">
-//                   {s.bodyText}
-//                 </p>
-//               </li>
-//             );
-//           })}
-
-//         </ul>
-//       </div>
-//   );
-// }

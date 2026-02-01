@@ -19,7 +19,7 @@ export default async function ValueProps() {
 
   return (
     <section className="bg-charcoal-mid">
-      <div className="mx-auto mx-auto container max-w-xl p-standard-mobile md:p-standard">
+      <div className="mx-auto container max-w-xl p-standard-mobile md:p-standard">
         <div className="flex items-center gap-8 lg:flex-row flex-col">
           {/* Left: Value props list */}
           <div className="lg:w-1/2 w-full">
