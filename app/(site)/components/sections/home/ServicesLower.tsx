@@ -90,7 +90,7 @@ export default function ServicesLower({
               >
                 <div className="overflow-hidden">
                   <p className="px-4 pb-4 text-grey-400 text-base leading-relaxed">
-                    {item.bodyText}
+                    {item.excerpt}
                   </p>
                 </div>
               </div>
