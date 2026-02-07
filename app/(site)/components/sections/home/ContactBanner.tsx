@@ -26,9 +26,9 @@ export default async function ContactBanner() {
         <div className="mx-auto container max-w-xl px-10 py-12 md:py-14 lg:py-18">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <h3 className="text-3xl md:text-4xl font-display font-semibold text-grey-100 mb-3">
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-grey-100 mb-3">
                 {homepage.contact.title}
-              </h3>
+              </h2>
               <p className="text-grey-400 text-base md:text-lg max-w-lg">
                 {homepage.contact.description}
               </p>

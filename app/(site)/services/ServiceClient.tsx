@@ -91,7 +91,7 @@ export default function ServicesIndexDetail({
             {active.title}
           </h3>
 
-          <div className="mt-5 border-t border-white/10 pt-5">
+          <div className="mt-5 border-t border-white/10 pt-5 h-[350px]">
             <p className="text-grey-100/90 leading-relaxed whitespace-pre-line">
               {active.bodyText}
             </p>

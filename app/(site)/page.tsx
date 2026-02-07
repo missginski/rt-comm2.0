@@ -7,6 +7,15 @@ import ValueProps from "./components/sections/home/ValProps";
 import HomeAbout from "./components/sections/home/HomeAbout";
 import ContactBanner from "./components/sections/home/ContactBanner";
 
+export const metadata = {
+  title: "Real-Time Communications",
+  description: "Reliable installation, splicing, and testing for critical infrastructure.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function Home() {
 
   return (

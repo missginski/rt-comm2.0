@@ -16,9 +16,9 @@ export default function ContactSectionClient({
             {/* <p className="text-xs font-semibold tracking-[0.25em] uppercase text-white/40 mb-3">
               Contact
             </p> */}
-            <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
+            <h1 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
               {contactPage.title}
-            </h2>
+            </h1>
             <p className="text-sm md:text-base text-grey-200 max-w-xl">
               {contactPage.description}
             </p>

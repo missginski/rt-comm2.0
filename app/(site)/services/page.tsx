@@ -4,6 +4,12 @@ import ServiceClient from "./ServiceClient"
 import { getServicesPage, getServices } from "@/sanity/sanity.query";
 import type { ServicesPageType, ServiceType } from "@/types";
 
+export const metadata = {
+  title: "Fiber Splicing & Testing Services",
+  description:
+    "Professional fiber optic splicing, OTDR testing, and emergency repair services for enterprise infrastructure.",
+};
+
 export default async function ServicesPage() {
   const servicesPage: ServicesPageType | null = await getServicesPage();
   const services: ServiceType[] = await getServices();

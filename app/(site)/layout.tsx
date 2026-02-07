@@ -18,8 +18,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Real-Time Communications",
-  description: "Reliable installation, splicing, and testing for critical infrastructure.",
+  title: "Enterprise Fiber Optic Installation",
+  description: "Certified fiber technicians providing 24/7 emergency response, advanced testing, and enterprise fiber installation services.",
   robots: {
     index: false,
     follow: false,
