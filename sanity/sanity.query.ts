@@ -1,7 +1,11 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
+import { getSanityClient } from "./getClient";
+
 
 export async function getHomepage() {
+  const { client, isDraft } = await getSanityClient();
+
   return client.fetch(
     groq`*[_type == "homepage"][0]{
       hero{
@@ -58,9 +62,9 @@ export async function getHomepage() {
       },
     }`,
     {},
-    {
-      next: { tags: ["homepage"] },
-    }
+    isDraft
+      ? { cache: "no-store" }
+      : { next: { tags: ["homepage"] } }
   );
 }
 

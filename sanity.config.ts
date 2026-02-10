@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import { openPreviewAction } from "./sanity/previewAction";
 
 export default defineConfig({
   name: 'default',
@@ -15,5 +16,9 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
+  },
+
+  document: {
+    actions: (prev) => [...prev, openPreviewAction],
   },
 })
