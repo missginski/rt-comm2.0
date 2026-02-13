@@ -18,11 +18,11 @@ export default async function ContactBanner() {
 
   return(
     <section 
-      className="bg-charcoal-mid bg-cover relative sm:h-[285px] h-[350px]"
+      className="bg-charcoal-mid bg-cover sm:h-[285px] h-[350px]"
       style={{ backgroundImage: `url(${bgUrl})` }}
     >
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent backdrop-blur-[3px] bg-black/40">
+      <div className="inset-0 bg-gradient-to-t from-black/80 to-transparent backdrop-blur-[3px] bg-black/40">
         <div className="mx-auto container max-w-xl px-10 py-12 md:py-14 lg:py-18">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>

@@ -44,7 +44,7 @@ export default function StatsStripClient({ statItems }: { statItems: StatItem[] 
   return (
     <section className="bg-charcoal-mid">
       <div className="mx-auto container max-w-xl px-10 py-6 md:py-8">
-        <div className="flex items-center flex-wrap lg:justify-between justify-center">
+        <div className="flex items-center flex-wrap lg:justify-between justify-center divide-y divide-white/10 md:divide-charcoal-mid">
           {statItems.length ? (
             statItems.map((stat) => (
               <div key={stat.label} className="flex flex-col flex-wrap items-center w-[305px] py-8">

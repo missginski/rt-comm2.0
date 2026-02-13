@@ -20,22 +20,22 @@ export default async function ValueProps() {
   return (
     <section className="bg-charcoal-mid">
       <div className="mx-auto container max-w-xl p-standard-mobile md:p-standard">
-        <div className="flex items-center gap-8 lg:flex-row flex-col">
+        <div className="flex items-center gap-8 lg:flex-row flex-col-reverse">
           {/* Left: Value props list */}
           <div className="lg:w-1/2 w-full">
             <h2 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
               {homepage.valProps.title}
             </h2>
-            <p className="text-base md:text-lg text-grey-400 mb-8 max-w-xl">
+            <p className="text-base md:text-lg text-grey-400 mb-14 max-w-xl">
               {homepage.valProps.description}
             </p>
-            <ul  className="space-y-4 text-base md:text-lg grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-8 max-w-[542px] m-auto lg:m-0">
+            <ul className="space-y-4 text-base md:text-lg grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 max-w-full m-auto lg:m-0">
               {homepage.valProps.valPropItems.map((prop) => (
-              <li key={prop.description} className="flex items-center gap-3 text-grey-400">
+              <li key={prop.description} className="flex items-center gap-3 text-grey-400 mb-0">
                 {(() => {
                   const Icon = getIcon(prop.icon);
                   return (
-                    <span className="mt-[2px] inline-flex h-10 w-10 items-center justify-center">
+                    <span className="inline-flex h-10 w-10 items-center justify-center">
                       {Icon ? (
                         <Icon className="h-6 w-6 text-red" aria-hidden="true" />
                       ) : (

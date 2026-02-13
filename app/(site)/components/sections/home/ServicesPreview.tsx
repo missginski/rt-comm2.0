@@ -34,7 +34,7 @@ export async function ServicesPreview() {
           <button className="
             bg-[var(--color-primary)]
             hover:bg-[var(--color-primary-soft)]
-            mx-auto
+            mx-auto mt-10
             block
             text-white
             font-semibold

@@ -66,7 +66,6 @@ export default function ServicesIndexDetail({
                   </div>
                 </div>
               </button>
-
             );
           })}
         </div>
@@ -90,14 +89,12 @@ export default function ServicesIndexDetail({
           <h3 className="font-display text-2xl md:text-3xl font-semibold text-grey-100">
             {active.title}
           </h3>
-
           <div className="mt-5 border-t border-white/10 pt-5">
             <p className="text-grey-100/90 leading-relaxed whitespace-pre-line">
               {active.bodyText}
             </p>
           </div>
         </div>
-
       </div>
     </div>
   );
