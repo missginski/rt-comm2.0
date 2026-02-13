@@ -19,7 +19,7 @@ export default async function HomeHero() {
   return (
     <main className="bg-charcoal-dark">
       <div
-        className="h-[100vh] md:h-[85vh] relative bg-cover bg-center"
+        className="hero-landscape-tight min-h-[90svh] md:min-h-[80vh] lg:min-h-[800px] relative bg-cover bg-center"
         style={{ backgroundImage: `url(${bgUrl})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80  to-transparent backdrop-blur-[3px] bg-black/40">

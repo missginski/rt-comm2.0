@@ -8,8 +8,8 @@ export default async function Certifications() {
   return(
     <section className="bg-charcoal-mid">
 
-      <div className="container max-w-[920px] p-standard-mobile md:p-standard mx-auto">
-        <div className="cert-wrapper flex justify-evenly flex-wrap">
+      <div className="container max-w-[1020px] p-standard-mobile md:p-standard mx-auto">
+        <div className="cert-wrapper flex justify-evenly flex-wrap gap-25 items-center">
           {certs.map((cert) => (
             <div key={cert.title} className="cert w-[220px] p-2">
               <img src={cert.logoImageUrl} alt={cert.title} />

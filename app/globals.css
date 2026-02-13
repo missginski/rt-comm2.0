@@ -38,3 +38,15 @@ body {
   color: var(--foreground);
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-landscape-tight {
+    min-height: 100svh;
+  }
+}
+
+@media (max-width: 500px) {
+  .text-width-xs {
+    max-width: 270px;
+  }
+}

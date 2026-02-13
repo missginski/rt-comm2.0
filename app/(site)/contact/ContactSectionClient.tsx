@@ -10,12 +10,9 @@ export default function ContactSectionClient({
 
   return (
     <section className="bg-charcoal-mid">
-      <div className="mx-auto container max-w-xl p-standard-mobile md:p-standard">
+      <div className="mx-auto container max-w-xl p-standard-mobile md:p-standard pt-[120px] md:pt-[96px]">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-center">
           <div>
-            {/* <p className="text-xs font-semibold tracking-[0.25em] uppercase text-white/40 mb-3">
-              Contact
-            </p> */}
             <h1 className="text-3xl font-display md:text-4xl font-semibold text-grey-100 mb-4">
               {contactPage.title}
             </h1>
@@ -24,7 +21,7 @@ export default function ContactSectionClient({
             </p>
 
             <div className="contact-info">
-              <div className="contacts flex justify-between">
+              <div className="contacts flex justify-between flex-col md:flex-row">
                 {contactPage.contactItems.map((contact) => (
                   <div key={contact.name} className="mt-8 text-sm text-grey-200 space-y-1">
                     <p className="text-xl font-bold text-grey-200">

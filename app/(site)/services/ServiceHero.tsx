@@ -28,7 +28,7 @@ export default async function ServiceHero() {
                 {servicesPage.hero.headline}
               </h1>
               <div className="max-w-[840px] m-auto">
-                <p className="pb-8 md:pb-12 max-w-xl  text-lg md:text-xl text-center sm:whitespace-pre-line whitespace-normal">
+                <p className="max-w-xl  text-lg md:text-xl text-center sm:whitespace-pre-line whitespace-normal">
                   {servicesPage.hero.subhead}
                 </p>
               </div>

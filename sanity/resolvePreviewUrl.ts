@@ -21,11 +21,11 @@ export function resolvePreviewUrl(doc: any) {
       path = "/";
   }
 
-  const secret = process.env.SANITY_STUDIO_PREVIEW_SECRET;
+  // const secret = process.env.SANITY_STUDIO_PREVIEW_SECRET;
 
   const url = new URL("/api/preview", base);
   url.searchParams.set("to", path);
-  if (secret) url.searchParams.set("secret", secret);
+  // if (secret) url.searchParams.set("secret", secret);
 
   return url.toString();
 }

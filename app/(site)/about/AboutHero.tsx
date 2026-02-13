@@ -28,7 +28,7 @@ export default async function AboutHero() {
                 {aboutPage.hero.headline}
               </h1>
               <div className="max-w-[840px] m-auto">
-                <p className="pb-8 md:pb-12 text-xl max-w-xl md:text-xl text-center sm:whitespace-pre-line whitespace-normal">
+                <p className="text-xl max-w-xl md:text-xl text-center sm:whitespace-pre-line whitespace-normal">
                   {aboutPage.hero.subhead}
                 </p>
               </div>

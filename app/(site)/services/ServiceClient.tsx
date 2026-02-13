@@ -59,7 +59,7 @@ export default function ServicesIndexDetail({
                         ].join(" ")}
                         aria-hidden="true"
                       />
-                      <div className="text-grey-100 font-semibold text-base md:text-2xl leading-snug max-w-[400px]">
+                      <div className="text-width-xs text-grey-100 font-semibold text-base md:text-2xl leading-snug sm:max-w-[1000px] md:max-w-[1000px] lg:max-w-[400px]">
                         {s.title}
                       </div>
                     </div>
@@ -73,7 +73,7 @@ export default function ServicesIndexDetail({
       </div>
 
       {/* Detail Panel */}
-      <div className="rounded-2xl bg-charcoal-mid/30 overflow-hidden">
+      <div className="rounded-2xl bg-charcoal-mid/30 overflow-hidden h-[1050px] sm:h-[850px]">
 
         {imgUrl && (
           <div className="h-56 md:h-72 w-full overflow-hidden">
@@ -91,7 +91,7 @@ export default function ServicesIndexDetail({
             {active.title}
           </h3>
 
-          <div className="mt-5 border-t border-white/10 pt-5 h-[350px]">
+          <div className="mt-5 border-t border-white/10 pt-5">
             <p className="text-grey-100/90 leading-relaxed whitespace-pre-line">
               {active.bodyText}
             </p>
