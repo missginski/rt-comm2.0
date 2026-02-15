@@ -156,7 +156,7 @@ export async function getSiteSettings() {
 
 export async function getServices() {
   return client.fetch(
-    groq`*[_type == "service"]{
+    groq`*[_type == "service"] | order(orderRank asc){
       _id,
       title,
       bodyText,

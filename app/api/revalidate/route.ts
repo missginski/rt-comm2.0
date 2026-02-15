@@ -2,16 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { revalidateTag } from "next/cache";
 
 export async function POST(req: NextRequest) {
-  const secret =
-    req.nextUrl.searchParams.get("secret") ||
-    req.headers.get("x-revalidate-secret");
-
-  if (!secret || secret !== process.env.REVALIDATE_SECRET) {
-    return NextResponse.json(
-      { ok: false, message: "Invalid secret" },
-      { status: 401 }
-    );
-  }
 
   let body: any = null;
   try {
@@ -34,6 +24,8 @@ export async function POST(req: NextRequest) {
 
   if (type === "service") {
     revalidateTag("services", "max");
+    revalidateTag("homepage", "max");
+    revalidateTag("servicesPage", "max");
   }
 
   if (type === "servicesPage") {

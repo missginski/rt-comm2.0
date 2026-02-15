@@ -3,7 +3,7 @@ import homepage from "./homepage"
 import contact from "./contact"
 import siteSettings from "./siteSettings"
 import aboutPage from "./aboutPage"
-import services from "./services"
+import service from "./services"
 import servicesPage from "./servicesPage"
 
-export const schemaTypes = [homepage, aboutPage, servicesPage, contact, services, siteSettings ]
+export const schemaTypes = [homepage, aboutPage, servicesPage, contact, service, siteSettings ]

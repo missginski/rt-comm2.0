@@ -1,11 +1,13 @@
 import { defineType, defineField } from "sanity";
 import ServiceExcerptInput from "@/app/(site)/services/ServiceExcerptInput";
+import { orderRankField } from "@sanity/orderable-document-list";
 
 const service = {
   name: "service",
   title: "Service",
   type: "document",
   fields: [
+    orderRankField({ type: "service" }),
     {
       name: "title",
       title: "Service Title",
