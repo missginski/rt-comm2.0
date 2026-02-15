@@ -4,21 +4,17 @@ export const openPreviewAction: DocumentActionComponent = (props) => {
   return {
     label: "Open preview",
     onHandle: () => {
-      const base =
-        typeof window !== "undefined" ? window.location.origin : "https://rt-comm2-0.vercel.app";
-
+      const base = window.location.origin;
       const doc = props.draft || props.published;
 
-      const map: Record<string, string> = {
+      const pathByType: Record<string, string> = {
         homepage: "/",
         aboutPage: "/about",
         servicesPage: "/services",
-        contact: "/contact",
+        contactPage: "/contact",
       };
 
-      const type = (doc && (doc as any)._type) as string | undefined;
-      const path = (type && map[type]) || "/";
-
+      const path = pathByType[(doc as any)?._type ?? ""] ?? "/";
       const url = new URL("/api/preview", base);
       url.searchParams.set("to", path);
 

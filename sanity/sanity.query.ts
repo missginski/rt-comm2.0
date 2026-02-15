@@ -69,6 +69,8 @@ export async function getHomepage() {
 }
 
 export async function getAboutPage() {
+  const { client, isDraft } = await getSanityClient();
+
   return client.fetch(
     groq`*[_type == "aboutPage"][0]{
       hero{
@@ -98,13 +100,15 @@ export async function getAboutPage() {
       },
     }`,
     {},
-    {
-      next: { tags: ["aboutPage"] },
-    }
+    isDraft
+      ? { cache: "no-store" }
+      : { next: { tags: ["aboutPage"] } }
   );
 }
 
 export async function getContactPage() {
+  const { client, isDraft } = await getSanityClient();
+
   return client.fetch(
     groq`*[_type == "contactPage"][0]{
       _id,
@@ -131,9 +135,9 @@ export async function getContactPage() {
       }
     }`,
     {},
-    {
-      next: { tags: ["contactPage"] },
-    }
+    isDraft
+      ? { cache: "no-store" }
+      : { next: { tags: ["contactPage"] } }
   );
 }
 
@@ -177,6 +181,8 @@ export async function getServices() {
 }
 
 export async function getServicesPage() {
+  const { client, isDraft } = await getSanityClient();
+
   return client.fetch(
     groq`*[_type == "servicesPage"][0]{
       _id,
@@ -191,9 +197,9 @@ export async function getServicesPage() {
       }
     }`,
     {},
-    {
-      next: { tags: ["servicesPage"] },
-    }
+    isDraft
+      ? { cache: "no-store" }
+      : { next: { tags: ["contactPage"] } }
   );
 }
 
