@@ -78,6 +78,7 @@ export type AboutPageType = {
   };
 
   certification: {
+    headline: string;
     certItems: {
       title: string;
       logoImageUrl: string;

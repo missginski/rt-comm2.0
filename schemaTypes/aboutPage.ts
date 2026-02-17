@@ -63,6 +63,11 @@ const aboutPage = {
       options: { collapsible: true, collapsed: true },
       fields: [
         {
+          name: "headline",
+          title: "Headline",
+          type: "string",
+        },
+        {
           name: "certItems",
           title: "Certifications",
           type: "array",

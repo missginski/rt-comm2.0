@@ -88,6 +88,7 @@ export async function getAboutPage() {
         aboutText
       },
       certification{
+        headline,
         certItems[]{
           title,
           "logoImageUrl": image.asset->url,
