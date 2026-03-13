@@ -20,10 +20,6 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Enterprise Fiber Optic Installation",
   description: "Certified fiber technicians providing 24/7 emergency response, advanced testing, and enterprise fiber installation services.",
-  robots: {
-    index: false,
-    follow: false,
-  },
 };
 
 export default function SiteLayout({

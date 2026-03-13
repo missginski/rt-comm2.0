@@ -8,10 +8,6 @@ export const metadata = {
     template: "%s | Real-Time Communications",
   },
   description: "Reliable installation, splicing, and testing for critical infrastructure.",
-  robots: {
-    index: false,
-    follow: false,
-  },
   openGraph: {
     siteName: "Real-Time Communications",
     type: "website",

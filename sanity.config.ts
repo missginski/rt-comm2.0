@@ -4,12 +4,12 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import { openPreviewAction } from "./sanity/previewAction";
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
-import type { StructureBuilder, StructureContext } from "sanity/structure";
+import type { StructureBuilder, StructureResolverContext } from "sanity/structure";
 
 
 export default defineConfig({
   name: 'default',
-  title: 'RTC Website',
+  title: 'Real-Time Communications',
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
@@ -17,7 +17,7 @@ export default defineConfig({
 
   plugins: [
     structureTool({
-      structure: (S: StructureBuilder, context: StructureContext) =>
+      structure: (S: StructureBuilder, context: StructureResolverContext) =>
         S.list()
           .title("Content")
           .items([
